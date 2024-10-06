@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:laboratorio/pages/detail.dart';
+import 'package:logger/logger.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -51,6 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     _messageChange();
+
+    var logger = Logger();
+    logger.d("Dentro de _MyHomePageState");
 
     return Scaffold(
         appBar: AppBar(

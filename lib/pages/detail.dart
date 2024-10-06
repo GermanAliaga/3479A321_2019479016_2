@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:laboratorio/pages/about.dart';
+import 'package:logger/logger.dart';
 
 class Detail extends StatelessWidget {
   const Detail(
@@ -16,6 +17,9 @@ class Detail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var logger = Logger();
+    logger.d("Dentro de Detail");
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,

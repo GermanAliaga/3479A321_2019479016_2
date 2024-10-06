@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class About extends StatelessWidget {
   const About(
@@ -14,6 +15,9 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var logger = Logger();
+    logger.d("Dentro de About");
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
