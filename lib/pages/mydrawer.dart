@@ -11,6 +11,9 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.all(5.0),

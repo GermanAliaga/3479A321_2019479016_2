@@ -24,7 +24,6 @@ class Detail extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Detalles'),
       ),
-      drawer: MyDrawer(),
       body: Center(
           child: Card(
         elevation: 20,

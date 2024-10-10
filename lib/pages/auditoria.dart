@@ -24,42 +24,7 @@ class Auditoria extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Auditoria'),
       ),
-      drawer: MyDrawer(),
-      body: Center(
-          child: Card(
-        elevation: 20,
-        color: Color.fromRGBO(243, 233, 233, 1),
-        child: SizedBox(
-            width: 300,
-            height: 300,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SvgPicture.asset(
-                    "assets/icons/controller_game_icon.svg",
-                    semanticsLabel: 'Game logo',
-                    width: 70,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('Volver')),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => About()));
-                          },
-                          child: const Text('Siguiente')),
-                    ],
-                  ),
-                ])),
-      )),
+      body: Center(),
     );
     //floatingActionButton: FloatingActionButton(onPressed: , child: Icon(Icons.icecream));
   }
