@@ -4,8 +4,8 @@ import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
 
-class Detail extends StatelessWidget {
-  const Detail({
+class Auditoria extends StatelessWidget {
+  const Auditoria({
     super.key,
     this.color = const Color.fromARGB(255, 231, 241, 223),
     this.child,
@@ -17,12 +17,12 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var logger = Logger();
-    logger.d("Dentro de Detail");
+    logger.d("Dentro de Auditoria");
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Detalles'),
+        title: Text('Auditoria'),
       ),
       drawer: MyDrawer(),
       body: Center(
@@ -39,6 +39,24 @@ class Detail extends StatelessWidget {
                     "assets/icons/controller_game_icon.svg",
                     semanticsLabel: 'Game logo',
                     width: 70,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Volver')),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => About()));
+                          },
+                          child: const Text('Siguiente')),
+                    ],
                   ),
                 ])),
       )),

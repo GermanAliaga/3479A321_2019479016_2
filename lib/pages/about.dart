@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
 
 class About extends StatelessWidget {
@@ -21,6 +22,7 @@ class About extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Sobre'),
       ),
+      drawer: MyDrawer(),
       body: Center(
           child: Card(
         elevation: 20,
@@ -32,16 +34,6 @@ class About extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const Text('Mi nombre es Germán'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('Volver'))
-                    ],
-                  ),
                 ])),
       )),
     );
