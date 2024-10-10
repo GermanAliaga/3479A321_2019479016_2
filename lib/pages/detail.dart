@@ -4,16 +4,14 @@ import 'package:laboratorio/pages/about.dart';
 import 'package:logger/logger.dart';
 
 class Detail extends StatelessWidget {
-  const Detail(
-      {super.key,
-      this.color = const Color.fromARGB(255, 231, 241, 223),
-      this.child,
-      required this.title});
+  const Detail({
+    super.key,
+    this.color = const Color.fromARGB(255, 231, 241, 223),
+    this.child,
+  });
 
   final Color color;
   final Widget? child;
-
-  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class Detail extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(this.title),
+        title: Text('Detalles'),
       ),
       body: Center(
           child: Card(
@@ -53,8 +51,7 @@ class Detail extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        About(title: 'Página 2')));
+                                    builder: (context) => About()));
                           },
                           child: const Text('Siguiente')),
                     ],

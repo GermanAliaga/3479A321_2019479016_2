@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
 class About extends StatelessWidget {
-  const About(
-      {super.key,
-      this.color = const Color.fromARGB(255, 241, 223, 223),
-      this.child,
-      required this.title});
+  const About({
+    super.key,
+    this.color = const Color.fromARGB(255, 241, 223, 223),
+    this.child,
+  });
 
   final Color color;
   final Widget? child;
-
-  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class About extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(this.title),
+        title: Text('Sobre'),
       ),
       body: Center(
           child: Card(

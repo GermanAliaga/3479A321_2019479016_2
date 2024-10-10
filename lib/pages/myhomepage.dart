@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:logger/logger.dart';
 
@@ -57,11 +58,43 @@ class _MyHomePageState extends State<MyHomePage> {
     logger.d("Dentro de _MyHomePageState");
 
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(5.0),
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(148, 255, 150, 150),
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Detalles'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Detail()));
+              },
+            ),
+            ListTile(
+              title: const Text('Sobre'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => About()));
+              },
+            )
+          ],
         ),
-        body: Center(
+      ),
+    );
+  }
+}
+
+
+ /*       body: Center(
             child: Card(
           elevation: 20,
           color: const Color.fromARGB(255, 243, 233, 233),
@@ -108,16 +141,4 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-        )),
-        persistentFooterButtons: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Detail(title: 'Página 1')));
-              },
-              child: const Icon(Icons.arrow_forward)),
-        ]);
-  }
-}
+        )),*/
