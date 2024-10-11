@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
 
 void main() {
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 183, 58, 58)),
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
     );
   }

@@ -5,18 +5,20 @@ import 'package:laboratorio/pages/auditoria.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
   @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.all(5.0),
+          padding: EdgeInsets.zero,
           children: [
             SizedBox(
               height: 125,
