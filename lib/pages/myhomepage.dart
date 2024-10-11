@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:laboratorio/pages/about.dart';
-import 'package:laboratorio/pages/auditoria.dart';
-import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
 

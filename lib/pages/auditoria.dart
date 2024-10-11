@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
 
-class Auditoria extends StatelessWidget {
+class Auditoria extends StatefulWidget {
   const Auditoria({
     super.key,
-    this.color = const Color.fromARGB(255, 231, 241, 223),
-    this.child,
   });
 
-  final Color color;
-  final Widget? child;
+  @override
+  State<Auditoria> createState() => _AuditoriaState();
+}
+
+class _AuditoriaState extends State<Auditoria> {
+  List<int> cambios = <int>[];
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,23 @@ class Auditoria extends StatelessWidget {
     logger.d("Dentro de Auditoria");
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Auditoria'),
-      ),
-      drawer: MyDrawer(),
-      body: Center(),
-    );
-    //floatingActionButton: FloatingActionButton(onPressed: , child: Icon(Icons.icecream));
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text('Auditoria'),
+        ),
+        drawer: MyDrawer(),
+        body: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: cambios.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              height: 50,
+              color: Color.fromARGB(148, 255, 150, 150),
+              child: Center(child: Text('Cambio de pantalla')),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        ));
   }
 }
