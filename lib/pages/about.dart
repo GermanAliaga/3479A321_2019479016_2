@@ -22,6 +22,7 @@ class About extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Sobre'),
       ),
+      drawer: MyDrawer(),
       body: Center(
           child: Card(
         elevation: 20,

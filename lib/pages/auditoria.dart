@@ -24,6 +24,7 @@ class Auditoria extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text('Auditoria'),
       ),
+      drawer: MyDrawer(),
       body: Center(),
     );
     //floatingActionButton: FloatingActionButton(onPressed: , child: Icon(Icons.icecream));
