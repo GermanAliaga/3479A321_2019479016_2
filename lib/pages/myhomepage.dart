@@ -16,41 +16,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  /*int _counter = 0;
-  String svg = "assets/icons/controller_game_icon.svg";
-  String message1 = 'Jugar';
-  String message2 = 'Cantidad de cliks';
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decreaseCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
-  void _restartCounter() {
-    setState(() {
-      _counter = 0;
-      message1 = 'Jugar';
-      svg = "assets/icons/restart_icon.svg";
-    });
-  }
-
-  void _messageChange() {
-    if (_counter == 5) {
-      message1 = 'Derrota';
-      svg = "assets/icons/game_over_icon.svg";
-    } else if (_counter == 10) {
-      message1 = 'Victoria';
-      svg = "assets/icons/victory_icon.svg";
-    }
-  }*/
-
   @override
   Widget build(BuildContext context) {
     var logger = Logger();

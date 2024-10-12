@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
 import 'package:laboratorio/pages/detail.dart';
@@ -10,6 +10,7 @@ class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
   @override
   Widget build(BuildContext context) {
+    print('${context.read<AppData>().actions.length}');
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -31,8 +32,8 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()));              
-              context.read<AppData>().actions[index] = 'Dentro de My Home Page';
+                  MaterialPageRoute(builder: (context) => MyHomePage()));
+              context.read<AppData>().actions.add('Dentro de My Home Page');
             },
           ),
           ListTile(
@@ -41,6 +42,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Detail()));
+              context.read<AppData>().actions.add('Dentro de Detalles');
             },
           ),
           ListTile(
@@ -49,6 +51,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => About()));
+              context.read<AppData>().actions.add('Dentro de Sobre');
             },
           ),
           ListTile(
@@ -57,6 +60,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Auditoria()));
+              context.read<AppData>().actions.add('Dentro de Auditoria');
             },
           )
         ],
