@@ -32,7 +32,7 @@ class _AuditoriaState extends State<Auditoria> {
             return Container(
               height: 50,
               color: Color.fromARGB(148, 255, 150, 150),
-              child: Center(child: Text('Cambio de pantalla')),
+              child: Center(child: Text('${context.read<AppData>().actions[index]}')),
             );
           },
           separatorBuilder: (BuildContext context, int index) =>
