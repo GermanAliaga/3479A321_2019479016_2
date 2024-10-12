@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
 
 class Detail extends StatelessWidget {
   const Detail({
@@ -39,6 +41,10 @@ class Detail extends StatelessWidget {
                     semanticsLabel: 'Game logo',
                     width: 70,
                   ),
+                  Text(
+                    '${context.read<AppData>().counter}',
+                    style: const TextStyle(fontSize: 30),
+                  )
                 ])),
       )),
     );

@@ -4,6 +4,7 @@ import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
+import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -30,7 +31,8 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()));
+                  MaterialPageRoute(builder: (context) => MyHomePage()));              
+              context.read<AppData>().actions[index] = 'Dentro de My Home Page';
             },
           ),
           ListTile(
