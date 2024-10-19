@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -14,45 +16,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  String svg = "assets/icons/controller_game_icon.svg";
-  String message1 = 'Jugar';
-  String message2 = 'Cantidad de cliks';
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decreaseCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
-  void _restartCounter() {
-    setState(() {
-      _counter = 0;
-      message1 = 'Jugar';
-      svg = "assets/icons/restart_icon.svg";
-    });
-  }
-
-  void _messageChange() {
-    if (_counter == 5) {
-      message1 = 'Derrota';
-      svg = "assets/icons/game_over_icon.svg";
-    } else if (_counter == 10) {
-      message1 = 'Victoria';
-      svg = "assets/icons/victory_icon.svg";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    _messageChange();
-
     var logger = Logger();
     logger.d("Dentro de _MyHomePageState");
 
@@ -75,33 +40,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SvgPicture.asset(
-                    svg,
+                    context.read<AppData>().svg,
                     semanticsLabel: 'Game logo',
                     width: 70,
                   ),
                   AutoSizeText(
-                    message1,
+                    context.read<AppData>().message1,
                     style: TextStyle(fontSize: 50),
                     maxLines: 2,
                   ),
                   Text(
-                    message2,
+                    context.read<AppData>().message2,
                   ),
                   Text(
-                    '$_counter',
+                    '${context.read<AppData>().counter}',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                          onPressed: _decreaseCounter,
+                          onPressed: context.read<AppData>().decreaseCounter,
                           child: const Icon(Icons.remove)),
                       ElevatedButton(
-                          onPressed: _incrementCounter,
+                          onPressed: context.read<AppData>().incrementCounter,
                           child: const Icon(Icons.add)),
                       ElevatedButton(
-                          onPressed: _restartCounter,
+                          onPressed: context.read<AppData>().restartCounter,
                           child: const Icon(Icons.restart_alt)),
                     ],
                   ),

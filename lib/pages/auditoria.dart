@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/mydrawer.dart';
 import 'package:logger/logger.dart';
+import 'package:provider/provider.dart';
 
 class Auditoria extends StatefulWidget {
   const Auditoria({
@@ -12,8 +14,6 @@ class Auditoria extends StatefulWidget {
 }
 
 class _AuditoriaState extends State<Auditoria> {
-  List<int> cambios = <int>[];
-
   @override
   Widget build(BuildContext context) {
     var logger = Logger();
@@ -27,12 +27,13 @@ class _AuditoriaState extends State<Auditoria> {
         drawer: MyDrawer(),
         body: ListView.separated(
           padding: const EdgeInsets.all(8),
-          itemCount: cambios.length,
+          itemCount: context.read<AppData>().actions.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               height: 50,
               color: Color.fromARGB(148, 255, 150, 150),
-              child: Center(child: Text('Cambio de pantalla')),
+              child: Center(
+                  child: Text('${context.read<AppData>().actions[index]}')),
             );
           },
           separatorBuilder: (BuildContext context, int index) =>

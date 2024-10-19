@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +13,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 183, 58, 58)),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => AppData()),
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+                seedColor: const Color.fromARGB(255, 183, 58, 58)),
+            useMaterial3: true,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: const MyHomePage(),
+        ));
   }
 }
