@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppData extends ChangeNotifier {
-  int counter = 0;
+  double counter = 0;
   String svg = "assets/icons/controller_game_icon.svg";
   String message1 = 'Jugar';
   String message2 = 'Cantidad de cliks';

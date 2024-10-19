@@ -4,6 +4,7 @@ import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
+import 'package:laboratorio/pages/preferencia.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -55,6 +56,14 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Auditoria()));
+            },
+          ),
+          ListTile(
+            title: const Text('Preferencia'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Preferencia()));
             },
           )
         ],
