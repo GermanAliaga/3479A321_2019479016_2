@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:laboratorio/main.dart';
+import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
 import 'package:laboratorio/pages/preferencia.dart';
+import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -27,11 +30,12 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('Contador'),
+            title: const Text('My Home Page'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MyHomePage()));
+              context.read<AppData>().actions.add('Dentro de My Home Page');
             },
           ),
           ListTile(
@@ -40,6 +44,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Detail()));
+              context.read<AppData>().actions.add('Dentro de Detalles');
             },
           ),
           ListTile(
@@ -48,6 +53,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => About()));
+              context.read<AppData>().actions.add('Dentro de Sobre');
             },
           ),
           ListTile(
@@ -56,6 +62,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Auditoria()));
+              context.read<AppData>().actions.add('Dentro de Auditoria');
             },
           ),
           ListTile(
@@ -64,6 +71,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Preferencia()));
+              context.read<AppData>().actions.add('Dentro de Preferencia');
             },
           )
         ],
