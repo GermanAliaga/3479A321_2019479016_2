@@ -20,15 +20,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var logger = Logger();
     logger.d("Dentro de _MyHomePageState");
+
     String svg = context.read<AppData>().svg;
     String message = context.read<AppData>().message1;
     double counter = context.read<AppData>().counter;
-
-    setState(() {
-      svg = context.read<AppData>().svg;
-      message = context.read<AppData>().message1;
-      counter = context.read<AppData>().counter;
-    });
 
     return Scaffold(
         appBar: AppBar(

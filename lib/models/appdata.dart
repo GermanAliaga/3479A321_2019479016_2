@@ -9,26 +9,40 @@ class AppData extends ChangeNotifier {
   List<String> actions = <String>[];
 
   void incrementCounter() {
-    counter++;
-  }
+    if (counter < 100) {
+      counter++;
+    } else {
+      counter = 100;
+    }
 
-  void decreaseCounter() {
-    counter--;
-  }
-
-  void restartCounter() {
-    counter = 0;
-    message1 = 'Jugar';
-    svg = "assets/icons/restart_icon.svg";
-  }
-
-  void messageChange() {
-    if (counter >= 5) {
+    if (counter >= 5 && counter < 10) {
       message1 = 'Derrota';
       svg = "assets/icons/game_over_icon.svg";
     } else if (counter >= 10) {
       message1 = 'Victoria';
       svg = "assets/icons/victory_icon.svg";
     }
+  }
+
+  void decreaseCounter() {
+    if (counter > 0) {
+      counter--;
+    } else {
+      counter = 0;
+    }
+
+    if (counter >= 5 && counter < 10) {
+      message1 = 'Derrota';
+      svg = "assets/icons/game_over_icon.svg";
+    } else if (counter >= 10) {
+      message1 = 'Victoria';
+      svg = "assets/icons/victory_icon.svg";
+    }
+  }
+
+  void restartCounter() {
+    counter = 0;
+    message1 = 'Jugar';
+    svg = "assets/icons/restart_icon.svg";
   }
 }

@@ -44,8 +44,8 @@ class _PreferenciaState extends State<Preferencia> {
               ),
               Slider(
                   value: context.read<AppData>().counter,
-                  max: 20,
-                  divisions: 20,
+                  max: 100,
+                  divisions: 100,
                   label: context.read<AppData>().counter.round().toString(),
                   onChanged: (double value) {
                     setState(() {
