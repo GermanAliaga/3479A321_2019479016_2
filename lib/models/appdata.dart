@@ -45,4 +45,14 @@ class AppData extends ChangeNotifier {
     message1 = 'Jugar';
     svg = "assets/icons/restart_icon.svg";
   }
+
+  void messageChanger() {
+    if (counter >= 5 && counter < 10) {
+      message1 = 'Derrota';
+      svg = "assets/icons/game_over_icon.svg";
+    } else if (counter >= 10) {
+      message1 = 'Victoria';
+      svg = "assets/icons/victory_icon.svg";
+    }
+  }
 }

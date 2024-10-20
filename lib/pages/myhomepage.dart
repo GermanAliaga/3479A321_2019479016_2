@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     context.read<AppData>().message2,
                   ),
                   Text(
-                    '${counter}',
+                    '${counter.round()}',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   Row(

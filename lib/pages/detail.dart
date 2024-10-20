@@ -42,7 +42,7 @@ class Detail extends StatelessWidget {
                     width: 70,
                   ),
                   Text(
-                    '${context.read<AppData>().counter}',
+                    '${context.read<AppData>().counter.round()}',
                     style: const TextStyle(fontSize: 30),
                   )
                 ])),

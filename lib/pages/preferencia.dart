@@ -37,7 +37,21 @@ class _PreferenciaState extends State<Preferencia> {
                 'Título',
                 style: TextStyle(fontSize: 30),
               ),
-              TextFormField(),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  labelText: 'Name *',
+                ),
+                onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                      ? 'Do not use the @ char.'
+                      : null;
+                },
+              ),
               Text(
                 'Título',
                 style: TextStyle(fontSize: 30),
@@ -50,6 +64,7 @@ class _PreferenciaState extends State<Preferencia> {
                   onChanged: (double value) {
                     setState(() {
                       context.read<AppData>().counter = value;
+                      context.read<AppData>().messageChanger();
                     });
                   }),
             ],
