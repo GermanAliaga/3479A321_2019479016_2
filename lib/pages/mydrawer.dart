@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:laboratorio/main.dart';
 import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
@@ -17,11 +15,11 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 125,
             child: DrawerHeader(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(148, 255, 150, 150),
+                color: Color.fromARGB(148, 255, 150, 150),
               ),
               child: Text(
                 'Drawer Header',
@@ -34,7 +32,7 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()));
+                  MaterialPageRoute(builder: (context) => const MyHomePage()));
               context.read<AppData>().actions.add('Dentro de My Home Page');
             },
           ),
@@ -42,8 +40,8 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Detalles'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Detail()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Detail()));
               context.read<AppData>().actions.add('Dentro de Detalles');
             },
           ),
@@ -51,8 +49,8 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Sobre'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => About()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const About()));
               context.read<AppData>().actions.add('Dentro de Sobre');
             },
           ),
@@ -61,7 +59,7 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Auditoria()));
+                  MaterialPageRoute(builder: (context) => const Auditoria()));
               context.read<AppData>().actions.add('Dentro de Auditoria');
             },
           ),
@@ -70,7 +68,7 @@ class MyDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Preferencia()));
+                  MaterialPageRoute(builder: (context) => const Preferencia()));
               context.read<AppData>().actions.add('Dentro de Preferencia');
             },
           )
