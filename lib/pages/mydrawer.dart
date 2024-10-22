@@ -28,12 +28,12 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('My Home Page'),
+            title: const Text('Contador'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MyHomePage()));
-              context.read<AppData>().actions.add('Dentro de My Home Page');
+              context.read<AppData>().actions.add('Dentro de Contador');
             },
           ),
           ListTile(
