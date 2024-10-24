@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/about.dart';
 import 'package:laboratorio/pages/auditoria.dart';
+import 'package:laboratorio/pages/camara.dart';
 import 'package:laboratorio/pages/detail.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
 import 'package:laboratorio/pages/preferencia.dart';
@@ -70,6 +71,16 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const Preferencia()));
               context.read<AppData>().actions.add('Dentro de Preferencia');
+            },
+          ),
+          ListTile(
+            title: const Text('Camara'),
+            onTap: () {
+              context.read<AppData>().camera();
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Camara(camera: context.read<AppData>().firstCamera,)));
+              context.read<AppData>().actions.add('Dentro de Camara');
             },
           )
         ],

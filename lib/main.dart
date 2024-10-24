@@ -3,7 +3,7 @@ import 'package:laboratorio/models/appdata.dart';
 import 'package:laboratorio/pages/myhomepage.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
 }
 

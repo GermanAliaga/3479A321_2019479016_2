@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 class AppData extends ChangeNotifier {
@@ -5,6 +6,8 @@ class AppData extends ChangeNotifier {
   String svg = "assets/icons/controller_game_icon.svg";
   String message1 = 'Jugar';
   String message2 = 'Cantidad de cliks';
+
+  late final firstCamera;
 
   List<String> actions = <String>[];
 
@@ -54,5 +57,11 @@ class AppData extends ChangeNotifier {
       message1 = 'Victoria';
       svg = "assets/icons/victory_icon.svg";
     }
+  }
+
+  void camera() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    final cameras = await availableCameras();
+    firstCamera = cameras.first;
   }
 }
